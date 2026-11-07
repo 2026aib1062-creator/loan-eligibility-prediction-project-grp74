@@ -20,7 +20,6 @@ X = df.drop("Loan_Status_Y", axis=1)
 y = df["Loan_Status_Y"]
 
 
-
 X_train, X_test, y_train, y_test = train_test_split(
     X,
     y,
