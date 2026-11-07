@@ -26,6 +26,11 @@ X_train, X_test, y_train, y_test = train_test_split(
     test_size=0.33,
     random_state=100,
     stratify=y
+    model = LogisticRegression(max_iter=100)
+model.fit(X_train_scaled, y_train)
+
+print("Logistic Regression model trained successfully!")
+
 )
 scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
