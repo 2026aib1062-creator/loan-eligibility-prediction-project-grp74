@@ -7,3 +7,14 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import precision_score, recall_score, f1_score
 from sklearn.metrics import ConfusionMatrixDisplay
+df = pd.read_csv("Loan_Data.csv")
+
+df = df.drop("Loan_ID", axis=1)
+df = df.drop("Gender", axis=1)
+df = df.dropna(subset=["Married","Loan_Amount_Term","Credit_History","Self_Employed","LoanAmount"])
+df['Dependents'] = df['Dependents'].str.replace('+', '', regex=False)
+df['Dependents'] = pd.to_numeric(df['Dependents'], errors='coerce').astype('Int64')
+df["Dependents"] = df["Dependents"].fillna(0)
+df = pd.get_dummies(df, drop_first=True)
+X = df.drop("Loan_Status_Y", axis=1)
+y = df["Loan_Status_Y"]
