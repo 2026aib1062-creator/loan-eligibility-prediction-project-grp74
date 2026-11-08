@@ -19,6 +19,8 @@ df["Dependents"] = df["Dependents"].fillna(0)
 df = pd.get_dummies(df, drop_first=True)
 X = df.drop("Loan_Status_Y", axis=1)
 y = df["Loan_Status_Y"]
+print("Data loaded and cleaned.")
+print("Shape of clean dataset:", df.shape)
 
 #Splitting the data for training and testing
 X_train, X_test, y_train, y_test = train_test_split(
@@ -41,10 +43,10 @@ prediction = model.predict(X_test_scaled)
 precision = precision_score(y_test, prediction)
 recall = recall_score(y_test, prediction)
 f1 = f1_score(y_test, prediction)
-
-print("Precision:", precision)
-print("Recall:", recall)
-print("F1-score:", f1)
+print("Made predictions on test data. The following are the performance metrics for the trained logistic regression model.")
+print("\nPrecision:", round(precision,3))
+print("Recall:", round(recall,3))
+print("F1-score:", round(f1,3))
 
 #Graphing and saving the confusion matrix and the bar graph into the Outputs folder
 actual_counts = y_test.value_counts().sort_index()
@@ -86,11 +88,15 @@ ax.legend()
 
 plt.tight_layout()
 plt.savefig("Output/Loan Eligibility prediction comparison.png", dpi=300, bbox_inches="tight")
+print("\nSaved prediction comparison; 'Output/Loan Eligibility prediction comparison.png'")
+plt.show()
 
-fig, ax = plt.subplots(figsize=(6, 6))
+fig, ax = plt.subplots(figsize=(8, 8))
 ConfusionMatrixDisplay.from_predictions(
     y_test, prediction, display_labels=["Not Eligible", "Eligible"], cmap="Blues", ax=ax
 )
 plt.title("Confusion Matrix", fontsize=14, weight="bold")
 
 plt.savefig("Output/confusion_matrix.png", dpi=300, bbox_inches="tight")
+print("Saved confusion matrix; 'Output/confusion_matrix.png'")
+plt.show()
