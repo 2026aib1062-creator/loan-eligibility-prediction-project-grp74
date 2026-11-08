@@ -43,7 +43,8 @@ prediction = model.predict(X_test_scaled)
 precision = precision_score(y_test, prediction)
 recall = recall_score(y_test, prediction)
 f1 = f1_score(y_test, prediction)
-print("Made predictions on test data. The following are the performance metrics for the trained logistic regression model.")
+
+print("\nMade predictions on test data. The following are the performance metrics for the trained logistic regression model.")
 print("\nPrecision:", round(precision,3))
 print("Recall:", round(recall,3))
 print("F1-score:", round(f1,3))
@@ -53,12 +54,14 @@ prediction_train = model.predict(X_train_scaled)
 precision_train = precision_score(y_train, prediction_train)
 recall_train = recall_score(y_train, prediction_train)
 f1_train = f1_score(y_train, prediction_train)
+
 print("\nMade predictions on training data. The following are the performance metrics for the trained logistic regression model.")
 print("\nPrecision:", round(precision_train,3))
 print("Recall:", round(recall_train,3))
 print("F1-score:", round(f1_train,3))
 
 #Graphing and saving the confusion matrix and the bar graph into the Outputs folder
+#Bar graph for comparing actual vs. predicted class
 actual_counts = y_test.value_counts().sort_index()
 
 predicted_counts = pd.Series(prediction).value_counts().sort_index()
@@ -101,11 +104,26 @@ plt.savefig("Output/Loan Eligibility prediction comparison.png", dpi=300, bbox_i
 print("\nSaved prediction comparison; 'Output/Loan Eligibility prediction comparison.png'")
 plt.show()
 
+#Confusion matrix for training data
+
+fig, ax = plt.subplots(figsize=(8, 8))
+ConfusionMatrixDisplay.from_predictions(
+    y_train, prediction_train, display_labels=["Not Eligible", "Eligible"], cmap="Blues", ax=ax
+)
+plt.title("Confusion Matrix for training data", fontsize=14, weight="bold")
+
+plt.savefig("Output/confusion_matrix.png", dpi=300, bbox_inches="tight")
+print("Saved confusion matrix; 'Output/confusion_matrix_training.png'")
+plt.show()
+
+#Confusion matrix for testing data
+
+
 fig, ax = plt.subplots(figsize=(8, 8))
 ConfusionMatrixDisplay.from_predictions(
     y_test, prediction, display_labels=["Not Eligible", "Eligible"], cmap="Blues", ax=ax
 )
-plt.title("Confusion Matrix", fontsize=14, weight="bold")
+plt.title("Confusion Matrix for testing data", fontsize=14, weight="bold")
 
 plt.savefig("Output/confusion_matrix.png", dpi=300, bbox_inches="tight")
 print("Saved confusion matrix; 'Output/confusion_matrix.png'")
