@@ -48,3 +48,28 @@ f1 = f1_score(y_test, prediction)
 print("Precision:", precision)
 print("Recall:", recall)
 print("F1-score:", f1)
+
+
+
+metric_names = ["Precision", "Recall", "F1-score"]
+metric_values = [precision, recall, f1]
+
+plt.figure(figsize=(8, 5))
+bars = plt.bar(metric_names, metric_values)
+
+plt.title("Logistic Regression: Performance Metric Comparison")
+plt.xlabel("Evaluation Metrics")
+plt.ylabel("Score")
+plt.ylim(0, 1)
+plt.grid(axis="y", linestyle="--", alpha=0.4)
+
+for bar, score in zip(bars, metric_values):
+    plt.text(
+        bar.get_x() + bar.get_width() / 2,
+        bar.get_height() + 0.02,
+        f"{score:.3f}",
+        ha="center"
+    )
+
+plt.tight_layout()
+plt.show()
