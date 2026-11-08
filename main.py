@@ -51,25 +51,38 @@ print("F1-score:", f1)
 
 
 
-metric_names = ["Precision", "Recall", "F1-score"]
-metric_values = [precision, recall, f1]
+labels = ["Not Eligible (0)", "Eligible (1)"]
+x = np.arange(len(labels))
+width = 0.35
 
-plt.figure(figsize=(8, 5))
-bars = plt.bar(metric_names, metric_values)
+fig, ax = plt.subplots(figsize=(8, 5))
+ax.bar(
+    x - width / 2,
+    actual_counts,
+    width,
+    label="Actual",
+    color="skyblue",
+    edgecolor="black",
+)
+ax.bar(
+    x + width / 2,
+    predicted_counts,
+    width,
+    label="Predicted",
+    color="salmon",
+    edgecolor="black",
+)
 
-plt.title("Logistic Regression: Performance Metric Comparison")
-plt.xlabel("Evaluation Metrics")
-plt.ylabel("Score")
-plt.ylim(0, 1)
-plt.grid(axis="y", linestyle="--", alpha=0.4)
-
-for bar, score in zip(bars, metric_values):
-    plt.text(
-        bar.get_x() + bar.get_width() / 2,
-        bar.get_height() + 0.02,
-        f"{score:.3f}",
-        ha="center"
-    )
+ax.set_xlabel("Class Category", fontsize=12)
+ax.set_ylabel("Count", fontsize=12)
+ax.set_title(
+    "Comparison of Actual vs. Predicted Class Distributions",
+    fontsize=14,
+    weight="bold",
+)
+ax.set_xticks(x)
+ax.set_xticklabels(labels)
+ax.legend()
 
 plt.tight_layout()
-plt.show()
+plt.savefig("Loan Eligibility prediction comparison.png", dpi=300, bbox_inches="tight")
