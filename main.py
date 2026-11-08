@@ -112,7 +112,7 @@ ConfusionMatrixDisplay.from_predictions(
 )
 plt.title("Confusion Matrix for training data", fontsize=14, weight="bold")
 
-plt.savefig("Output/confusion_matrix.png", dpi=300, bbox_inches="tight")
+plt.savefig("Output/confusion_matrix_for_training_data.png", dpi=300, bbox_inches="tight")
 print("Saved confusion matrix; 'Output/confusion_matrix_training.png'")
 plt.show()
 
@@ -125,6 +125,6 @@ ConfusionMatrixDisplay.from_predictions(
 )
 plt.title("Confusion Matrix for testing data", fontsize=14, weight="bold")
 
-plt.savefig("Output/confusion_matrix.png", dpi=300, bbox_inches="tight")
+plt.savefig("Output/confusion_matrix_for_testing_data.png", dpi=300, bbox_inches="tight")
 print("Saved confusion matrix; 'Output/confusion_matrix.png'")
 plt.show()
