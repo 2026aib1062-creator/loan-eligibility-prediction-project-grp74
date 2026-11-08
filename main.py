@@ -49,7 +49,9 @@ print("Precision:", precision)
 print("Recall:", recall)
 print("F1-score:", f1)
 
+actual_counts = y_test.value_counts().sort_index()
 
+predicted_counts = pd.Series(prediction).value_counts().sort_index()
 
 labels = ["Not Eligible (0)", "Eligible (1)"]
 x = np.arange(len(labels))
@@ -85,4 +87,14 @@ ax.set_xticklabels(labels)
 ax.legend()
 
 plt.tight_layout()
-plt.savefig("Loan Eligibility prediction comparison.png", dpi=300, bbox_inches="tight")
+plt.savefig("Output/Loan Eligibility prediction comparison.png", dpi=300, bbox_inches="tight")
+
+# Plot the confusion matrix directly from true and predicted values
+fig, ax = plt.subplots(figsize=(6, 6))
+ConfusionMatrixDisplay.from_predictions(
+    y_test, prediction, display_labels=["Not Eligible", "Eligible"], cmap="Blues", ax=ax
+)
+plt.title("Confusion Matrix", fontsize=14, weight="bold")
+
+# Optional: Save the plot to your device
+plt.savefig("confusion_matrix.png", dpi=300, bbox_inches="tight")
