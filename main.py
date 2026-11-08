@@ -48,6 +48,16 @@ print("\nPrecision:", round(precision,3))
 print("Recall:", round(recall,3))
 print("F1-score:", round(f1,3))
 
+#Making predictions on training data using the trained model
+prediction_train = model.predict(X_train_scaled)
+precision_train = precision_score(y_train, prediction_train)
+recall_train = recall_score(y_train, prediction_train)
+f1_train = f1_score(y_train, prediction_train)
+print("\nMade predictions on training data. The following are the performance metrics for the trained logistic regression model.")
+print("\nPrecision:", round(precision_train,3))
+print("Recall:", round(recall_train,3))
+print("F1-score:", round(f1_train,3))
+
 #Graphing and saving the confusion matrix and the bar graph into the Outputs folder
 actual_counts = y_test.value_counts().sort_index()
 
