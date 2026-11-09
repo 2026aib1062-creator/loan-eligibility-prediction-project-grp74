@@ -10,7 +10,8 @@ A Machine Learning project that predicts loan eligibility using Logistic Regress
 | Tanus Metla | 2026MCB1576 | PPT Lead |
 | Abhinav | 2026AIB1002 | Video Lead |
 
-###Project Structure
+### Project structure
+
 loan-eligibility-prediction-project-grp74/
 │
 ├── Output/
