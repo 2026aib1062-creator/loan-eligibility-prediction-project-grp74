@@ -9,3 +9,15 @@ A Machine Learning project that predicts loan eligibility using Logistic Regress
 | Devnandan Menon | 2026EEB1343 | Execution Lead |
 | Tanus Metla | 2026MCB1576 | PPT Lead |
 | Abhinav | 2026AIB1002 | Video Lead |
+
+###Project Structure
+loan-eligibility-prediction-project-grp74/
+│
+├── Output/
+│   ├── confusion_matrix_for_testing.png
+│   └── .gitignore
+│
+├── Loan_Data.csv
+├── main.py
+├── requirements.txt
+└── README.md
