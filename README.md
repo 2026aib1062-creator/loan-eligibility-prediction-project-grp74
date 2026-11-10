@@ -28,8 +28,6 @@ loan-eligibility-prediction-project-grp74/
 ```
 
 
-## Setup
-
 
 ## Steps to Run
 
