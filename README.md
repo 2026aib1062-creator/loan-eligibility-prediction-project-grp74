@@ -46,14 +46,14 @@ Run the following commands in order.
     ``` bash
     cd loan-eligibility-prediction-project-grp74
     ```
-   **Install dependencies**
+3. **Install dependencies**
 
    ``` bash
    pip install -r requirements.txt
    ```
 
 
-3.  **Run the program**
+4.  **Run the program**
 
     ``` bash
     python main.py
