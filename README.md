@@ -98,8 +98,7 @@ Saved confusion matrix; 'Output/confusion_matrix_for_testing_data.png'
 -   **GitHub repository:** [Loan Eligibility Prediction -- Group
     74](https://github.com/2026aib1062-creator/loan-eligibility-prediction-project-grp74)
 
--   **Presentation slides:**
--   In the repository
+-   **Presentation slides:**In the repository
 
 -   **Project video:** 
 
