@@ -18,11 +18,13 @@ applicant information.
 ``` text
 loan-eligibility-prediction-project-grp74/
 │
-├── main.py              # Data preprocessing, model training and evaluation
-├── Loan_Data.csv        # Input dataset
-├── README.md            # Project documentation
-├── requirements.txt     # Libraries to be installed before running
-└── outputs/             # Screenshots of the program output
+├── main.py                              # Data preprocessing, model training and evaluation
+├── Loan_Data.csv                       # Input dataset
+├── Loan_Eligibility_Prediction_Group74.pptx  # Project presentation
+├── README.md                            # Project documentation
+├── requirements.txt                     # Required Python libraries
+│
+└── Output/                              # Screenshots of program output
 ```
 
 
@@ -96,7 +98,8 @@ Saved confusion matrix; 'Output/confusion_matrix_for_testing_data.png'
 -   **GitHub repository:** [Loan Eligibility Prediction -- Group
     74](https://github.com/2026aib1062-creator/loan-eligibility-prediction-project-grp74)
 
--   **Presentation slides:** 
+-   **Presentation slides:**
+-   In the repository
 
 -   **Project video:** 
 
