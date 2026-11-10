@@ -30,11 +30,6 @@ loan-eligibility-prediction-project-grp74/
 
 ## Setup
 
-### Install dependencies
-
-``` bash
-pip install -r requirements.txt
-```
 
 ## Steps to Run
 
@@ -51,6 +46,11 @@ Run the following commands in order.
     ``` bash
     cd loan-eligibility-prediction-project-grp74
     ```
+   **Install dependencies**
+
+   ``` bash
+   pip install -r requirements.txt
+   ```
 
 
 3.  **Run the program**
