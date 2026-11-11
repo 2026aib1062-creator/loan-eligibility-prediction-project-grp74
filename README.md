@@ -103,4 +103,4 @@ Saved confusion matrix; 'Output/confusion_matrix_for_testing_data.png'
 ## AI-Use Disclosure
 
 > AI tools used: ChatGPT
-> Purpose: AI was used for graphing the performance metrics,to create organised slide and taken reference for making REAME.md file
+> Purpose: AI was used to graph the performance metrics, to create organised slides and take reference for making README.md file
