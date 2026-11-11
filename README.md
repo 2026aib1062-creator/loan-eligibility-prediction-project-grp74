@@ -10,7 +10,7 @@ applicant information.
 |---|---|---|---|
 | Neil Vikas Patil |2026AIB1062 | Documentation Lead |2026aib1062-creator|
 | Devnandan Menon | 2026EEB1343 | Execution Lead | Devnandan-M |
-| Tanus Metla | 2026MCB1576 | PPT Lead | 2026mcb1576-hash |
+| Tanush Metla | 2026MCB1576 | PPT Lead | 2026mcb1576-hash |
 | Abhinav | 2026AIB1002 | Video Lead | AbhinavKaroli|
 
 ## Project Structure
@@ -98,7 +98,7 @@ Saved confusion matrix; 'Output/confusion_matrix_for_testing_data.png'
 
 -   **Presentation slides:** In the repository
 
--   **Project video:** 
+-   **Project video:** https://drive.google.com/file/d/11P85ifGU3mDM2OtSLO7niEojav9CntLl/view?usp=drivesdk
 
 ## AI-Use Disclosure
 
